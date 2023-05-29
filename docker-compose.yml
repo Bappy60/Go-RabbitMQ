@@ -9,8 +9,8 @@ services:
       - 5672:5672 # for sender and consumer connections
       - 15672:15672 # for serve RabbitMQ GUI
     volumes:
-      - D:/dev-rabbitmq/data/:/var/lib/rabbitmq
-      - D:/dev-rabbitmq/log/:/var/log/rabbitmq
+      - dev-rabbitmqData:/var/lib/rabbitmq
+      - dev-rabbitmqLog:/var/log/rabbitmq
     networks:
       - dev-network
 
@@ -47,3 +47,7 @@ networks:
   # Create a new Docker network.
   dev-network:
     driver: bridge
+
+volumes:
+  dev-rabbitmqData:
+  dev-rabbitmqLog:
